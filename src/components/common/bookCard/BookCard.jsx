@@ -3,13 +3,20 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions, Grid } from "@mui/material";
+import { useDispatch } from "react-redux";
+import { placeOrder } from "../../../redux/createOrderSlice";
 
 const BookCard = ({ books }) => {
+  const dispatch = useDispatch();
+
+  const handelPlaceOrder = (bookid) => {
+    dispatch(placeOrder(bookid));
+  };
   return (
     <Grid container spacing={7}>
       {books.map((item) => {
         return (
-          <Grid item xs={12} md={6} lg={4}>
+          <Grid item xs={12} md={6} lg={4} key={item.id}>
             <Card sx={{ maxWidth: 345 }}>
               <CardActionArea>
                 <CardMedia
@@ -36,6 +43,7 @@ const BookCard = ({ books }) => {
                   color="primary"
                   variant="contained"
                   sx={{ bgcolor: "#02373C", ":hover": { bgcolor: "#02373C" } }}
+                  onClick={() => handelPlaceOrder(item.id)}
                 >
                   Place Order
                 </Button>
