@@ -21,16 +21,24 @@ import { TextField } from "@mui/material";
 import RightSideBar from "./common/RightSideBar";
 import { mainNavbarItems } from "../utils/DrawerMenu";
 import { Outlet, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { changesidebar } from "../redux/sideBarActiveSlice";
 
 const drawerWidth = 240;
 
 function Libary(props) {
+  const { activeBar } = useSelector((state) => state.sidebar);
+
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
+  };
+  const handelBarActiveWhenClick = (label) => {
+    dispatch(changesidebar(label));
   };
 
   const drawer = (
@@ -55,17 +63,21 @@ function Libary(props) {
             disablePadding
             sx={{
               ":hover": {
-                backgroundColor: "#032F33",
-                ":focus": { backgroundColor: "#012225" },
+                backgroundColor:
+                  activeBar !== item.label ? "#032F33" : "#012225",
               },
             }}
           >
             <ListItemButton
               sx={{
                 color: "#E4F2F0",
-                ":focus": { backgroundColor: "#012225" },
+
+                backgroundColor: activeBar == item.label && "#012225",
               }}
-              onClick={() => navigate(item.route)}
+              onClick={() => {
+                navigate(item.route);
+                handelBarActiveWhenClick(item.label);
+              }}
             >
               <ListItemIcon sx={{ color: "#E4F2F0" }}>
                 {index % 2 === 0 ? item.icon : item.icon}
