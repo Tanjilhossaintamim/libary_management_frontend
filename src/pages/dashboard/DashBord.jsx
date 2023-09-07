@@ -10,6 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import LeftSideDashboard from "./LeftSideDashboard";
+import RightSideDashboard from "./RightSideDashboard";
 
 const DashBord = () => {
   const { is_loading, profileData } = useSelector((state) => state.profile);
@@ -25,12 +26,14 @@ const DashBord = () => {
         </Typography>
         <Grid container spacing={2} sx={{ mt: "20px" }}>
           {/* left side dashboard part  */}
-          <Grid lg={6}>
+          <Grid lg={5} xs={12} md={12} sx={{ mb: "20px" }}>
             <LeftSideDashboard profileName={profileData?.name} />
           </Grid>
           {/* right side dashboard part  */}
 
-          <Grid lg={6}>df</Grid>
+          <Grid lg={6} xs={12} md={12} sx={{ ml: "20px" }}>
+            <RightSideDashboard profileData={profileData} />
+          </Grid>
         </Grid>
       </Box>
     </Container>
