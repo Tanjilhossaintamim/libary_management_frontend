@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const dispatch = useDispatch();
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -21,7 +21,7 @@ export default function BasicMenu() {
   };
   const userLogout = () => {
     dispatch(logout());
-    navigate('/')
+    navigate("/");
   };
 
   return (
@@ -47,8 +47,6 @@ export default function BasicMenu() {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
         <MenuItem onClick={userLogout}>Logout</MenuItem>
       </Menu>
     </div>

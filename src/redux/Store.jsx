@@ -4,6 +4,7 @@ import loginSlice from "./loginSlice";
 import profileSlice from "./profileSlice";
 import orderSlice from "./orderSlice";
 import sideBarActiveSlice from "./sideBarActiveSlice";
+import bookSlice from "./bookSlice";
 
 const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
     profile: profileSlice,
     order: orderSlice,
     sidebar: sideBarActiveSlice,
+    book: bookSlice,
   },
 });
 
