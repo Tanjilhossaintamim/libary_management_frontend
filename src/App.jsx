@@ -15,6 +15,7 @@ import DashBord from "./pages/dashboard/DashBord";
 import Books from "./pages/books/Books";
 import Categories from "./pages/categories/Categories";
 import "./App.css";
+import SearchBook from "./pages/searchBook/SearchBook";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,14 @@ const router = createBrowserRouter([
         element: (
           <PrivetRouter>
             <Categories />
+          </PrivetRouter>
+        ),
+      },
+      {
+        path: "/dashboard/search/book/:query",
+        element: (
+          <PrivetRouter>
+            <SearchBook />
           </PrivetRouter>
         ),
       },

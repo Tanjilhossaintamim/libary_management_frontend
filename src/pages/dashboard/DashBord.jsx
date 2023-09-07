@@ -1,14 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserProfileData } from "../../redux/profileSlice";
-import {
-  Box,
-  Container,
-  Divider,
-  Grid,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import LeftSideDashboard from "./LeftSideDashboard";
 import RightSideDashboard from "./RightSideDashboard";
 import OrderHistory from "./OrderHistory";
@@ -16,6 +9,7 @@ import { getCustomerOrder } from "../../redux/orderSlice";
 
 const DashBord = () => {
   const { is_loading, profileData } = useSelector((state) => state.profile);
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUserProfileData());

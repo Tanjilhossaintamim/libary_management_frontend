@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
-  activeBar: "Dashbord",
+  activeBar: "Dashboard",
 };
 
 const slidebarActiveSlice = createSlice({

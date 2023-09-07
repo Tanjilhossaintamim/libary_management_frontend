@@ -23,12 +23,13 @@ import { mainNavbarItems } from "../utils/DrawerMenu";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { changesidebar } from "../redux/sideBarActiveSlice";
+import SearchBook from "../pages/searchBook/SearchBook";
 
 const drawerWidth = 240;
 
 function Libary(props) {
   const { activeBar } = useSelector((state) => state.sidebar);
-
+  const [searchValue, setSearchValue] = React.useState("");
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const navigate = useNavigate();
@@ -39,6 +40,13 @@ function Libary(props) {
   };
   const handelBarActiveWhenClick = (label) => {
     dispatch(changesidebar(label));
+  };
+
+  const handelSearch = (e) => {
+    if (e.key == "Enter" && searchValue != "") {
+      navigate(`/dashboard/search/book/${searchValue}`);
+      setSearchValue("");
+    }
   };
 
   const drawer = (
@@ -120,6 +128,9 @@ function Libary(props) {
             label="Search Books..."
             type="search"
             variant="filled"
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+            onKeyUp={handelSearch}
             sx={{ width: "400px", backgroundColor: "#F1F3F4" }}
           />
           {/* right side bar  */}
