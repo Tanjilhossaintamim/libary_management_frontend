@@ -14,22 +14,22 @@ const RightSideDashboard = ({ profileData }) => {
         <Box>
           <Box sx={{ display: "flex", mb: "10px" }}>
             <Typography sx={{ fontWeight: "bold" }}>Name:</Typography>
-            <Typography sx={{ ml: "20px" }}>{profileData.name}</Typography>
+            <Typography sx={{ ml: "20px" }}>{profileData?.name}</Typography>
           </Box>
           <Box sx={{ display: "flex", mb: "10px" }}>
             <Typography sx={{ fontWeight: "bold" }}>Address:</Typography>
-            <Typography sx={{ ml: "20px" }}>{profileData.address}</Typography>
+            <Typography sx={{ ml: "20px" }}>{profileData?.address}</Typography>
           </Box>
         </Box>
         {/* righside  */}
         <Box>
           <Box sx={{ display: "flex", mb: "10px" }}>
             <Typography sx={{ fontWeight: "bold" }}>Contact no:</Typography>
-            <Typography sx={{ ml: "20px" }}>{profileData.phone}</Typography>
+            <Typography sx={{ ml: "20px" }}>{profileData?.phone}</Typography>
           </Box>
           <Box sx={{ display: "flex", mb: "10px" }}>
             <Typography sx={{ fontWeight: "bold" }}>College:</Typography>
-            <Typography sx={{ ml: "20px" }}>{profileData.college}</Typography>
+            <Typography sx={{ ml: "20px" }}>{profileData?.college}</Typography>
           </Box>
         </Box>
       </Box>
