@@ -25,7 +25,7 @@ const Books = () => {
     });
   };
   useEffect(() => {
-    dispatch(fetchBooks("/api/books"));
+    dispatch(fetchBooks("api/books"));
   }, []);
   return (
     <Container>

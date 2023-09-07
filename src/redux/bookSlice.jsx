@@ -32,7 +32,7 @@ export const fetchBooks = createAsyncThunk("book/get", async (endpoint) => {
     },
   };
   try {
-    const response = await axios.get(`${BASEURL}/${endpoint}/`, header);
+    const response = await axios.get(`${BASEURL}/${endpoint}`, header);
     return response.data;
   } catch (error) {
     console.log("🚀 ~ file: bookSlice.jsx:25 ~ fetchBooks ~ error:", error);

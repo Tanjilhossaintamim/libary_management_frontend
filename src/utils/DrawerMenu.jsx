@@ -6,7 +6,7 @@ export const mainNavbarItems = [
   {
     id: 0,
     icon: <DashboardIcon />,
-    label: "Dashbord",
+    label: "Dashboard",
     route: "/dashboard",
   },
   {
