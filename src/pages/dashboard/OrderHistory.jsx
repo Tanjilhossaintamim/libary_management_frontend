@@ -5,13 +5,10 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { getCustomerOrder } from "../../redux/orderSlice";
+import { useSelector } from "react-redux";
 
 export default function OrderHistory() {
   const { orders } = useSelector((state) => state.order);
-  console.log(orders);
 
   return (
     <TableContainer component={Paper}>

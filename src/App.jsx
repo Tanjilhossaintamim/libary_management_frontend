@@ -14,6 +14,7 @@ import { check_login } from "./redux/loginSlice";
 import DashBord from "./pages/dashboard/DashBord";
 import Books from "./pages/books/Books";
 import Categories from "./pages/categories/Categories";
+import "./App.css";
 
 const router = createBrowserRouter([
   {
