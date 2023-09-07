@@ -12,6 +12,7 @@ export default function SelectCategory({
   const [category, setCategory] = useState(1);
 
   const handleChange = (event) => {
+    // dropdown change funtionality
     handelFetchCategoryBook(event.target.value);
     setCategory(event.target.value);
   };

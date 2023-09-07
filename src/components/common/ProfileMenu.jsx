@@ -20,6 +20,7 @@ export default function BasicMenu() {
     setAnchorEl(null);
   };
   const userLogout = () => {
+    // this function will handel logout 
     dispatch(logout());
     navigate("/");
   };

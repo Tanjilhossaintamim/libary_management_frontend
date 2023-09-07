@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchBooks } from "../../redux/bookSlice";
@@ -11,6 +11,7 @@ const SearchBook = () => {
   const { books, is_loading } = useSelector((state) => state.book);
   const { query } = useParams();
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(fetchBooks(`api/books/?search=${query}`));
   }, [query]);

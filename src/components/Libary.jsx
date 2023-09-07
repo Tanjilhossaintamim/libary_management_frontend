@@ -6,13 +6,11 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -23,7 +21,6 @@ import { mainNavbarItems } from "../utils/DrawerMenu";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { changesidebar } from "../redux/sideBarActiveSlice";
-import SearchBook from "../pages/searchBook/SearchBook";
 
 const drawerWidth = 240;
 
@@ -36,13 +33,16 @@ function Libary(props) {
   const dispatch = useDispatch();
 
   const handleDrawerToggle = () => {
+    // this function handel drawer open and close funtionality
     setMobileOpen(!mobileOpen);
   };
   const handelBarActiveWhenClick = (label) => {
+    // this function handel which bar will active
     dispatch(changesidebar(label));
   };
 
   const handelSearch = (e) => {
+    // this function handel search funtionality  
     if (e.key == "Enter" && searchValue != "") {
       navigate(`/dashboard/search/book/${searchValue}`);
       setSearchValue("");

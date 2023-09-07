@@ -1,6 +1,6 @@
 import { Box, Container, Typography } from "@mui/material";
 import Bookicon from "../../assets/icons8-open-book-100.png";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import BookCard from "../../components/common/bookCard/BookCard";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBooks } from "../../redux/bookSlice";

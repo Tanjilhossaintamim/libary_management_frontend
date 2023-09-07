@@ -20,12 +20,11 @@ import { userLogin } from "../../redux/loginSlice";
 import { useSelector } from "react-redux";
 
 const Login = () => {
-  const { is_loading, errorMessage, loggedInSuccess } = useSelector(
-    (state) => state.login
-  );
+  const { is_loading, errorMessage } = useSelector((state) => state.login);
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+
+  // form handel using formik
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues: {

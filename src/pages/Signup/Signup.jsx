@@ -31,6 +31,8 @@ const Signup = () => {
   );
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  // form handel using formik
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues: initialValues,
@@ -41,8 +43,8 @@ const Signup = () => {
     });
 
   if (is_signup_success) {
-    navigate("/login");
     dispatch(removeSuccess());
+    navigate("/login");
   }
 
   return (
@@ -69,6 +71,7 @@ const Signup = () => {
 
         <Box component={"form"} sx={{ mt: 3 }} onSubmit={handleSubmit}>
           <Grid container spacing={2}>
+            {/* *************** */}
             <Grid item xs={12} sm={6}>
               <TextField
                 name="name"
@@ -82,6 +85,8 @@ const Signup = () => {
                 <Typography sx={{ color: "red" }}>{errors.name}</Typography>
               ) : null}
             </Grid>
+            {/* *************** */}
+
             <Grid item xs={12} sm={6}>
               <TextField
                 name="phone"
@@ -95,6 +100,8 @@ const Signup = () => {
                 <Typography sx={{ color: "red" }}>{errors.phone}</Typography>
               ) : null}
             </Grid>
+            {/* *************** */}
+
             <Grid item xs={12}>
               <TextField
                 fullWidth
@@ -110,6 +117,8 @@ const Signup = () => {
                 <Typography sx={{ color: "red" }}>{errors.address}</Typography>
               ) : null}
             </Grid>
+            {/* *************** */}
+
             <Grid item xs={12}>
               <TextField
                 fullWidth
@@ -125,6 +134,8 @@ const Signup = () => {
                 <Typography sx={{ color: "red" }}>{errors.college}</Typography>
               ) : null}
             </Grid>
+            {/* *************** */}
+
             <Grid item xs={12}>
               <TextField
                 fullWidth
@@ -140,6 +151,8 @@ const Signup = () => {
                 <Typography sx={{ color: "red" }}>{errors.email}</Typography>
               ) : null}
             </Grid>
+            {/* *************** */}
+
             <Grid item xs={12}>
               <TextField
                 fullWidth
@@ -156,6 +169,8 @@ const Signup = () => {
                 <Typography sx={{ color: "red" }}>{errors.password}</Typography>
               ) : null}
             </Grid>
+            {/* *************** */}
+
             <Grid item xs={12}>
               <TextField
                 fullWidth
@@ -174,6 +189,8 @@ const Signup = () => {
                 </Typography>
               ) : null}
             </Grid>
+            {/* *************** */}
+
           </Grid>
           <Button
             type="submit"

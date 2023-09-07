@@ -14,6 +14,7 @@ const Categories = () => {
   const dispatch = useDispatch();
 
   const handelFetchCategoryBook = (categoryId) => {
+    // when this funtion will call then willbe show categoriwise book
     dispatch(fetchBooks(`api/books/?category=${categoryId}`));
   };
   useEffect(() => {

@@ -8,8 +8,7 @@ import OrderHistory from "./OrderHistory";
 import { getCustomerOrder } from "../../redux/orderSlice";
 
 const DashBord = () => {
-  const { is_loading, profileData } = useSelector((state) => state.profile);
-
+  const { profileData } = useSelector((state) => state.profile);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUserProfileData());
