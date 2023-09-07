@@ -5,11 +5,23 @@ import BookCard from "../../components/common/bookCard/BookCard";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBooks } from "../../redux/bookSlice";
 import LoadingSkeleton from "../../components/common/LoadingSkeleton";
+import { ToastContainer, toast } from "react-toastify";
 
 const Books = () => {
   const { books, is_loading } = useSelector((state) => state.book);
-
   const dispatch = useDispatch();
+  const showtoast = () => {
+    toast.success("order Placed succesfully !", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  };
   useEffect(() => {
     dispatch(fetchBooks("/api/books"));
   }, []);
@@ -26,8 +38,25 @@ const Books = () => {
         <Typography variant="h5" sx={{ fontWeight: "bold", mb: "10px" }}>
           Books In the Library:
         </Typography>
-        {is_loading ? <LoadingSkeleton /> : <BookCard books={books} />}
+        {is_loading ? (
+          <LoadingSkeleton />
+        ) : (
+          <BookCard books={books} showtoast={showtoast} />
+        )}
       </Box>
+      {/* for toast message  */}
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </Container>
   );
 };

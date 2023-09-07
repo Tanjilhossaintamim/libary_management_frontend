@@ -1,17 +1,21 @@
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
+
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions, Grid } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { placeOrder } from "../../../redux/createOrderSlice";
+import { ToastContainer, toast } from "react-toastify";
 
-const BookCard = ({ books }) => {
+const BookCard = ({ books, showtoast }) => {
   const dispatch = useDispatch();
 
   const handelPlaceOrder = (bookid) => {
     dispatch(placeOrder(bookid));
+    showtoast();
   };
+
   return (
     <Grid container spacing={7}>
       {books.map((item) => {
