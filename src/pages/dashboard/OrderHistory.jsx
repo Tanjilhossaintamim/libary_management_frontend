@@ -28,22 +28,21 @@ export default function OrderHistory() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {orders.length != 0 &&
-            orders.map((order) => (
-              <TableRow
-                key={order.id}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-              >
-                <TableCell component="th" scope="row">
-                  {order.book.name}
-                </TableCell>
-                <TableCell align="right">{order.book.category.name}</TableCell>
-                <TableCell align="right">{order.quantity}</TableCell>
-                <TableCell align="right">
-                  {new Date(order.placed_at).toDateString()}
-                </TableCell>
-              </TableRow>
-            ))}
+          {orders?.map((order) => (
+            <TableRow
+              key={order.id}
+              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+            >
+              <TableCell component="th" scope="row">
+                {order.book.name}
+              </TableCell>
+              <TableCell align="right">{order.book.category.name}</TableCell>
+              <TableCell align="right">{order.quantity}</TableCell>
+              <TableCell align="right">
+                {new Date(order.placed_at).toDateString()}
+              </TableCell>
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
     </TableContainer>
