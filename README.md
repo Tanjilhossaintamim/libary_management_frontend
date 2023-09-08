@@ -6,17 +6,19 @@
 This website has some books , a user can show book and filter by category 
 without login a user can not access his dashboard,and can not place order
 
+<a href="https://libary-management.netlify.app" target="_blank">Live View</a>
+
 ## installation
 ```
-https://github.com/Tanjilhossaintamim/libary_management_frontend.git
+git clone https://github.com/Tanjilhossaintamim/libary_management_frontend.git
 npm install
 npm run dev
 ```
-## Live Link 
-```
-https://libary-management.netlify.app
-```
+
 ## Pakages
+- axios
+- formik
+- yup
 - redux toolkit
 - material ui
 - react redux
