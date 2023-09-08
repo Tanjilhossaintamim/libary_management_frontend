@@ -28,7 +28,7 @@ const DashBord = () => {
           {/* right side dashboard part  */}
 
           <Grid item lg={6} xs={12} md={12} sx={{ ml: "20px" }}>
-            <RightSideDashboard profileData={profileData} />
+            <RightSideDashboard profileData={profileData && profileData} />
           </Grid>
         </Grid>
       </Box>

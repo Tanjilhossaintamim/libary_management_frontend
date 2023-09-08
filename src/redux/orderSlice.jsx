@@ -21,6 +21,7 @@ const orderSlice = createSlice({
 
     builder.addCase(getCustomerOrder.rejected, (state, action) => {
       state.is_loading = false;
+      state.orders = [];
     });
   },
 });
