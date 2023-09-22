@@ -1,6 +1,6 @@
 # Libary Management System
 
-<img src="https://i.ibb.co/0VNQRRF/rsz-libary.png"  alt="coding" width="700">
+<img src="https://i.ibb.co/0VNQRRF/rsz-libary.png"  alt="coding">
 
 ## Overview
 This website has some books , a user can show book and filter by category 
